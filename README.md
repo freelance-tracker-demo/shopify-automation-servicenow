@@ -1,9 +1,3 @@
-<p align="center">
-  <img src="banner.png" alt="Shopify Automation Banner" width="100%" />
-</p>
-
-# Shopify Automation Using ServiceNow
-
 # Shopify Automation Using ServiceNow
 
 🚀 **Project Overview**
