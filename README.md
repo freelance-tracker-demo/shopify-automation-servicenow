@@ -35,9 +35,33 @@ This project demonstrates how ServiceNow can be used as an orchestration engine 
 
 ## 🧩 Architecture Diagram
 
-*(Coming soon: Visual diagram showing Webhooks, REST calls, Flows, and API interactions.)*
-
----
+(1) Shopify Event: New Article Published
+          |
+          v
+(2) Webhook (HTTP POST) --> ServiceNow (Scripted REST API)
+          |
+          v
+(3) ServiceNow (Flow Designer or Business Rule)
+          |
+          v
+(4) Actions:
+    - Call OpenAI (GPT API) --> Generate Social Titles & Descriptions (RESTMessageV2)
+    - Call Canva API --> Generate Social Media Design (RESTMessageV2)
+          |
+          v
+(5) ServiceNow composes Social Media Content
+          |
+          v
+(6) Post to:
+    - Pinterest API
+    - Twitter (X) API
+    - LinkedIn API
+    - Instagram/Facebook API
+          |
+          v
+(7) Update ServiceNow Record:
+    - Mark Article as 'Promoted'
+    - Store Links and Post Results
 
 ## 📂 Repository Structure
 
