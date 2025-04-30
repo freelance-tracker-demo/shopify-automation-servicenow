@@ -1,0 +1,18 @@
+(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var shopifyUrl = 'https://your-store.myshopify.com/admin/api/2023-04/orders.json';
+    var shopifyToken = 'your_shopify_private_app_token';
+
+    var r = new sn_ws.RESTMessageV2();
+    r.setHttpMethod('GET');
+    r.setEndpoint(shopifyUrl);
+    r.setRequestHeader('Content-Type', 'application/json');
+    r.setRequestHeader('X-Shopify-Access-Token', shopifyToken);
+
+    var res = r.execute();
+    var responseBody = res.getBody();
+    var httpStatus = res.getStatusCode();
+
+    response.setStatus(httpStatus);
+    response.setHeader("Content-Type", "application/json");
+    response.setBody(responseBody);
+})(request, response);
